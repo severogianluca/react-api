@@ -1,0 +1,29 @@
+body {
+    background-image: url('./assets/star.jpg');
+    background-size: cover; /* oppure 'contain' se vuoi vederla tutta */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* per effetto parallax */
+  }
+  
+
+  h1{
+    color: #ffffff;
+  }
+
+.actor-img {
+    height: 300px;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .card {
+    background-color: rgba(255, 255, 255, 0.05); /* Trasparenza molto alta (5%) */
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombra soft per stacco */
+  }
+
+  .card-body {
+    color: #ffffff; 
+  }
+  
