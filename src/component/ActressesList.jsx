@@ -2,7 +2,7 @@ function ActressesList({ actresses }) {
     return (
         <>
             <div>
-                <h1>Attrici</h1>
+                <h2>Attrici</h2>
             </div>
             <div className="card-group">
                 {actresses.map((actres) => (

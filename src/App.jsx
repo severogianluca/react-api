@@ -30,25 +30,33 @@ function App() {
     <>
 
       {/* MENU */}
-      <nav className="navbar bg-light border-bottom border-body"
-        data-bs-theme="dark">
-        <div>
-          <img className="logo" src={logo} alt="logo" />
+      <nav className="navbar bg-light border-bottom border-body" data-bs-theme="dark">
+        <div className="d-flex align-items-center justify-content-between w-100">
+          {/* Logo a sinistra */}
+          <div>
+            <img className="logo" src={logo} alt="logo" />
+          </div>
+
+          {/* Titolo al centro */}
+          <div className="mx-auto">
+            <h1>Le star del cinema</h1>
+          </div>
+
+          {/* Filtro a destra */}
+          <div>
+            <select
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+              className="form-select select-actors"
+              aria-label="Default select example"
+            >
+              <option value="">----</option>
+              <option value="actresses">Solo attrici</option>
+              <option value="actors">Solo attori</option>
+              <option value="all">Tutti</option>
+            </select>
+          </div>
         </div>
-        <div>
-
-          {/* FILTRO */}
-          <select value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="form-select select-actors container" aria-label="Default select example">
-
-            <option value="">----</option>
-            <option value="actresses">Solo attrici</option>
-            <option value="actors">Solo attori</option>
-            <option value="all">Tutti</option>
-          </select>
-        </div>
-
       </nav>
 
       {/* Quando il filtro è vuoto, mostra un video  */}
@@ -56,10 +64,10 @@ function App() {
         <div className="video-background">
           <video autoPlay muted loop className="video-background">
             <source src={video} type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         </div>
       )}
+      
 
       {/* filtro per attori, attrici o tutti gli attori */}
       {filter === "all" || filter === "actresses" ? <ActressesList actresses={actresses} /> : null}
