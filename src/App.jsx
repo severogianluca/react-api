@@ -29,37 +29,37 @@ function App() {
   return (
     <>
 
-    {/* MENU */}
-    <nav className="navbar bg-light border-bottom border-body"
-     data-bs-theme="dark">
-     <div>
-      <img className="logo" src={logo} alt="logo" />  
-    </div> 
-    <div>
+      {/* MENU */}
+      <nav className="navbar bg-light border-bottom border-body"
+        data-bs-theme="dark">
+        <div>
+          <img className="logo" src={logo} alt="logo" />
+        </div>
+        <div>
 
-      {/* FILTRO */}
-    <select value={filter} 
-      onChange={(e) => setFilter(e.target.value)}
-      className="form-select select-actors container" aria-label="Default select example">
+          {/* FILTRO */}
+          <select value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className="form-select select-actors container" aria-label="Default select example">
 
-      <option value="">----</option>
-        <option value="all">Tutti</option>
-        <option value="actors">Solo attori</option>
-        <option value="actresses">Solo attrici</option>
-      </select>
-    </div>
+            <option value="">----</option>
+            <option value="actresses">Solo attrici</option>
+            <option value="actors">Solo attori</option>
+            <option value="all">Tutti</option>
+          </select>
+        </div>
 
-  </nav>
+      </nav>
 
-        {/* Quando il filtro è vuoto, mostra un video  */}
-        {filter === "" && (
+      {/* Quando il filtro è vuoto, mostra un video  */}
+      {filter === "" && (
         <div className="video-background">
           <video autoPlay muted loop className="video-background">
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
-        )}
+      )}
 
       {/* filtro per attori, attrici o tutti gli attori */}
       {filter === "all" || filter === "actresses" ? <ActressesList actresses={actresses} /> : null}
